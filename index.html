@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moddasir's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/045ea2e56d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header section  -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/NewLogo__1_-removebg-preview.png" class="logo" alt="">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Designer</p>
+                <h1>Hi, I'm <span>Moddasir</span> <br> From Bangladesh</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- about section  -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hi, I'm Moddasir from Brahmanbaria, Bangladesh and I'm a Junior Web Developer and I'm a student
+                        of computer Science And Technology at Changzhou University, China. currently I'm learning Web
+                        Development and I did some personal project.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('address')">Address</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web Development</li>
+                            <li><span>App Development</span><br>App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="address">
+                        <ul>
+                            <li><span>Name</span><br>Moddasir</li>
+                            <li><span>Call Me</span><br>+8801521559367</li>
+                            <li><span>Email: </span><br>moddasir311@gmail.com</li>
+                            <li><span>Location</span><br>Brahmanbaria, Bangladesh</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>B. Sc. in CST</span><br>Changzhou University | Changzhou,China (2019-Present)</li>
+                            <li><span>HSC</span><br>Tejgaon College | Farmgate, Dhaka (2017-2018)</li>
+                            <li><span>SSC</span><br>Shibpur Union High School | Brahmanbaria(2015-2016)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services section  -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>I made a website for my project this website design made by me if you want to see my design click
+                        Learn More</p>
+                    <a href="https://assignment-10-auth.web.app/">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Front End</h2>
+                    <p>I'm a Front-Dnd Developer I made 30+ projects using HTML, CSS, Bootstrap, Tailwind CSS, React,
+                        etc.</p>
+                    <a href="https://github.com/moddas311">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h2>Backend</h2>
+                    <p>As I'm Web Developer so I know Back-end too, I made projects using Node.js, Express.js, MongoDB,
+                        etc.</p>
+                    <a href="https://github.com/moddas311/used-phones-server.git">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JsFile -->
+    <script>
+        var tabLinks = document.getElementsByClassName('tab-links');
+        var tabContents = document.getElementsByClassName('tab-contents');
+
+        function openTab(tabName) {
+            for (tabLink of tabLinks) {
+                tabLink.classList.remove('active-link')
+            }
+            for (tabContent of tabContents) {
+                tabContent.classList.remove('active-tab')
+            }
+            event.currentTarget.classList.add('active-link')
+            document.getElementById(tabName).classList.add('active-tab')
+        }
+    </script>
+</body>
+
+</html>
