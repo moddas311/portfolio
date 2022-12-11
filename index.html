@@ -24,7 +24,7 @@
                     <li><a href="#contact">Contact</a></li>
                     <i class="fas fa-times" onclick="closeMenu()"></i>
                 </ul>
-                <i class="fas fa-bars" onclick="openMenu()"></i>  
+                <i class="fas fa-bars" onclick="openMenu()"></i>
             </nav>
             <div class="header-text">
                 <p>UI/UX Designer</p>
@@ -122,7 +122,7 @@
                             This website is for second-hand phones sale and buying. if you want you can buy or sell.
                             Visit this site
                         </p>
-                        <a href=""><i class="fa-solid fa-link"></i></a>
+                        <a href="https://used-product-auth.web.app/"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
                 <div class="project">
@@ -134,11 +134,11 @@
                             review his services if you were his client.
                             Visit website
                         </p>
-                        <a href=""><i class="fa-solid fa-link"></i></a>
+                        <a href="https://assignment11-auth.web.app/"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="images/project10 (1).png" alt="">
+                    <img src="images/OnlineIt10 (1).png" alt="">
                     <div class="layer">
                         <h3>Educational website</h3>
                         <p>
@@ -146,11 +146,11 @@
                             related. Then you should follow online it.
                             Visit website
                         </p>
-                        <a href=""><i class="fa-solid fa-link"></i></a>
+                        <a href="https://assignment-10-auth.web.app/"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="" class="btn">See more</a>
+            <a href="https://github.com/moddas311" class="btn">See more</a>
         </div>
     </div>
 
@@ -163,20 +163,21 @@
                     <p><i class="fas fa-paper-plane"></i>moddasir311@gmail.com</p>
                     <p><i class="fas fa-phone-square-alt"></i>+8801521559367</p>
                     <div class="social-icon">
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                        <a href=""><i class="fa-brands fa-github"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/m-moddasir/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/moddas311"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.facebook.com/mdmuddasir.hossain.5"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/moddas_30/"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <a href="images/Moddasir Resume.pdf" download class="btn btn-resume">Download Resume</a>
                 </div>
                 <div class="contact-email">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn-resume">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -206,12 +207,32 @@
 
     <script>
         var sideMenu = document.getElementById('sideMenu');
-        function openMenu(){
+        function openMenu() {
             sideMenu.style.right = "0"
         }
-        function closeMenu(){
+        function closeMenu() {
             sideMenu.style.right = "-200px"
         }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwlNZiVwyhUnCbQIYTk4OTXZ3-bwjezgUziPkb7GSbIYoLXazo-Rwn-GgaPODmAGGisIA/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const msg = document.getElementById('msg')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = 'Message send successfully'
+                    setTimeout(function () {
+                        msg.innerHTML = ''
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 </body>
 
