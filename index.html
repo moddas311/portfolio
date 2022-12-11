@@ -16,13 +16,15 @@
         <div class="container">
             <nav>
                 <img src="images/NewLogo__1_-removebg-preview.png" class="logo" alt="">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sideMenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openMenu()"></i>  
             </nav>
             <div class="header-text">
                 <p>UI/UX Designer</p>
@@ -108,7 +110,7 @@
     </div>
 
     <!-- Portfolio section  -->
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
         <div class="container">
             <div class="sub-title">My Projects</div>
             <div class="project-list">
@@ -199,6 +201,16 @@
             }
             event.currentTarget.classList.add('active-link')
             document.getElementById(tabName).classList.add('active-tab')
+        }
+    </script>
+
+    <script>
+        var sideMenu = document.getElementById('sideMenu');
+        function openMenu(){
+            sideMenu.style.right = "0"
+        }
+        function closeMenu(){
+            sideMenu.style.right = "-200px"
         }
     </script>
 </body>
